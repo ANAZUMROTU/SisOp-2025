@@ -1,5 +1,3 @@
-# sistem-bilangan
-
 # SISTEM BILANGAN
 
 Nama: Ana Zumrotu Nailir Rif Ah
