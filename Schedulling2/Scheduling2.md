@@ -37,7 +37,7 @@ Pada titik ini, scheduler SJF akan mengevaluasi P2 dan P3 yang keduanya sudah te
 ## 3.SRTF (preemptive) 
 
 Contoh Kasus:
-![Gambar 3](/Schedulling2/kasus_srtf.jpeg)
+![Gambar 3](/Schedulling2/srtf.jpeg)
 
 Analisa : Pada awalnya, di waktu t=0, hanya P1 yang tersedia, sehingga ia mulai dieksekusi. Namun, dinamika SRTF segera terlihat ketika pada waktu t=1, P2 tiba. Sisa waktu P1 yang saat itu 7 unit (8-1) akan dibandingkan dengan burst time P2 yaitu 4 unit. Karena P2 lebih pendek, P1 segera di-preempt, dan P2 mengambil alih CPU. Proses ini berlanjut; pada waktu t=2 dan t=3, meskipun P3 dan P4 tiba, sisa waktu P2 (yang terus berkurang menjadi 2 dan 1) masih lebih pendek dibandingkan burst time awal P3 (9) dan P4 (5), sehingga P2 terus berjalan.
 
