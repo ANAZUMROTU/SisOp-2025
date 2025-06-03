@@ -14,7 +14,17 @@ Kelas: 1 TI A
 
 ## Tulisan tentang fork
 
-Fungsi fork() adalah panggilan sistem fundamental dalam sistem operasi berbasis Unix-like (termasuk Linux) yang berfungsi untuk membuat proses baru, yang disebut proses *child, yang merupakan salinan identik dari proses pemanggilnya, yang disebut proses **parent. Ketika fork() dipanggil, kernel sistem operasi akan menciptakan ruang alamat memori baru untuk proses child yang sebagian besar identik dengan parent-nya (seringkali dengan teknik *copy-on-write untuk efisiensi). Kedua proses, parent dan child, akan melanjutkan eksekusi dari instruksi setelah panggilan fork(). Nilai kembalian dari fork() berfungsi sebagai penanda: proses child akan menerima nilai 0, sedangkan proses parent akan menerima Process ID (PID) dari proses child yang baru dibuat. Jika fork() gagal, ia akan mengembalikan -1 pada proses parent.
+Fungsi fork() adalah perintah penting dalam sistem operasi mirip Unix (seperti Linux) yang digunakan untuk membuat proses baru. Proses baru ini, yang disebut proses anak (child), adalah duplikat persis dari proses yang memanggilnya, yang disebut proses induk (parent).
+
+Saat fork() dijalankan, kernel sistem operasi akan menyiapkan ruang memori baru untuk proses anak yang sebagian besar sama dengan proses induk (seringkali menggunakan teknik copy-on-write agar lebih efisien). Baik proses induk maupun proses anak akan melanjutkan eksekusi kode tepat setelah titik di mana fork() dipanggil.
+
+Nilai yang dikembalikan oleh fork() berfungsi sebagai penanda:
+
+- Proses anak akan menerima nilai 0.
+
+- Proses induk akan menerima ID Proses (PID) dari proses anak yang baru saja dibuat.
+
+- Jika fork() gagal membuat proses anak, ia akan mengembalikan nilai -1 pada proses induk.
 
 Implementasi fork() dalam C umumnya melibatkan pemeriksaan nilai kembalian untuk menentukan apakah kode dieksekusi oleh parent atau child, memungkinkan jalur eksekusi yang berbeda untuk setiap proses. Misalnya, proses child dapat diberikan tugas spesifik yang berbeda dari parent-nya, atau bahkan mengganti program yang sedang dijalankannya dengan program baru menggunakan keluarga fungsi exec(). Sementara itu, proses parent dapat memilih untuk menunggu child-nya selesai menggunakan wait() atau waitpid(), atau melanjutkan eksekusinya secara independen. Kemampuan ini menjadi tulang punggung bagi sistem operasi untuk mencapai concurrency dan menjalankan banyak program secara simultan, di mana sebuah proses utama dapat mendelegasikan bagian-bagian dari pekerjaannya kepada proses child.
 
