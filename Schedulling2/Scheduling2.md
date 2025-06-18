@@ -14,6 +14,7 @@ Contoh Kasus:
 
 ```mermaid
 gantt
+    title Gantt Chart (SJF Non-Preemptive)
     dateFormat  X
     axisFormat %s
     section Processes
@@ -44,6 +45,7 @@ Contoh Kasus:
 
 ```mermaid
 gantt
+    title Gantt Chart (SJF with Arrival Time - Non-Preemptive)
     dateFormat  X
     axisFormat %s
     section Processes
@@ -64,6 +66,7 @@ Contoh Kasus:
 
 ```mermaid
 gantt
+    title Gantt Chart (SRTF Preemptive)
     dateFormat  X
     axisFormat %s
     section Processes
